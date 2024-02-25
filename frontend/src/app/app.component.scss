@@ -10,9 +10,9 @@
     justify-content: start;
     font-size: 2rem;
     padding: 1rem 2rem;
-    background-color: white;
+    background-color: #FBB700;
     font-weight: bold;
-    border-bottom: solid 3px #0f0f0f5b;
+    border-bottom: solid 5px whitesmoke;
   }
 }
 
@@ -52,8 +52,8 @@
     }
   }
   .active {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: #FBB700;
     transition: all 0.1s;
   }
 }
