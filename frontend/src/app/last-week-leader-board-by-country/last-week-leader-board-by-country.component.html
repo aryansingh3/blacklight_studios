@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="title">Country LeaderBoard</h1>
+    <h1 class="sub-title">Top 200 participants (Last Week)</h1>
+    <div class="input-container">
+      <div>
+        <div class="gradient">
+          <div>Search For a Country Code</div>
+        </div>
+        <input
+          class="input-field"
+          type="text"
+          (input)="onChange($event)"
+          value="{{ country }}"
+          placeholder="Enter a Country Code (eg. IN, RS, US, DK)"
+        />
+      </div>
+    </div>
+  
+    <div class="card-container">
+      <table class="table">
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Country Code</th>
+          <th>UID</th>
+          <th>Timestamp</th>
+        </tr>
+        <tr *ngFor="let item of pastWeekLeaderBoardDataByCountry; let i = index" class="row">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.score }}</td>
+          <td>{{ item.country }}</td>
+          <td>{{ item.uid }}</td>
+          <td>{{ formatTimestamp(item.timestamp) }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>

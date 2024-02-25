@@ -1,0 +1,50 @@
+@import "../variables.scss";
+
+.container {
+  margin: 4rem;
+  margin-top: 0rem;
+
+  .title {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  .sub-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    background-color: black;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+  }
+  .table {
+    width: 100%;
+    th {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+    td,
+    th {
+      padding: 1rem;
+      cursor: pointer;
+      margin: 1rem;
+      background-color: $light-primary-color;
+      opacity: 1;
+    }
+    tr {
+      transition: 0.25s all;
+      opacity: 0;
+      &:hover {
+        transform: scale(1.01);
+      }
+      &:nth-child(1){
+        opacity: 1;
+      }
+      &:nth-child(n + 2):nth-child(-n + 6) {
+        color: #0a74a2;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

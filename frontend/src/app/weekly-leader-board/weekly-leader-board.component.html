@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="title">Weekly Global LeaderBoard</h1>
+  <h1 class="sub-title gradient">Top 200 participants</h1>
+
+  <div class="card-container">
+    <table class="table">
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Country Code</th>
+        <th>UID</th>
+        <th>Timestamp</th>
+      </tr>
+      <tr
+        *ngFor="let item of weeklyLeaderBoard; let i = index"
+        [style.animation-delay]="calculateDelay(i)"
+        class="row fade-in"
+      >
+      
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.score }}</td>
+        <td>{{ item.country }}</td>
+        <td>{{ item.uid }}</td>
+        <td>{{ formatTimestamp(item.timestamp) }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

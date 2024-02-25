@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="navbar">
+    <img src="../assets/download.jpg" style="height: 50px; width: 50px" />
+    <div style="cursor: pointer; padding-left: 2rem" (click)="goToHome()">
+      Black Light Studios
+    </div>
+  </div>
+  <div class="card-container">
+    <div
+      class="card card2"
+      [class.active]="tabName === 'page1'"
+      (click)="goToWeeklyLeaderBoard()"
+    >
+      <div>
+        <div class="title">Weekly Global Leaderboard</div>
+      </div>
+    </div>
+    <div
+      class="card card3"
+      [class.active]="tabName === 'page2'"
+      (click)="goToLastWeekLeaderBoardByCountry()"
+    >
+      <div>
+        <div class="title">Country Leaderboard (Last Week)</div>
+      </div>
+    </div>
+    <div
+      class="card card2"
+      [class.active]="tabName === 'page3'"
+      (click)="goToUserLeaderBoardByRank()"
+    >
+      <div>
+        <div class="title">Participant's Rank & Score</div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

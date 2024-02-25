@@ -1,0 +1,41 @@
+<div class="container">
+  <h1 class="title">Get User Rank and Score</h1>
+  <div class="input-container">
+    <div>
+      <div>
+        <div class="gradient">Search a user using uid</div>
+        <div class="gradient" style="font-size: 1rem">
+          (you can get uid from leaderboard)
+        </div>
+      </div>
+      <input
+        class="input-field"
+        type="text"
+        (input)="onChange($event)"
+        value="{{ uid }}"
+        placeholder="Enter a uid"
+      />
+    </div>
+  </div>
+
+  <div class="card-container">
+    <table class="table">
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Country Code</th>
+        <th>UID</th>
+        <th>Timestamp</th>
+      </tr>
+      <tr *ngFor="let item of userData; let i = index" class="row">
+        <td>{{ item.rank }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.score }}</td>
+        <td>{{ item.country }}</td>
+        <td>{{ item.uid }}</td>
+        <td>{{ formatTimestamp(item.timestamp) }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
