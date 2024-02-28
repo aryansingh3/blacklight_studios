@@ -42,3 +42,9 @@ Follow these steps to run the project:
 3. Start the backend: `node app.js`.
 
 Now, the project is ready for access and use. Explore the various leaderboards and user rank functionalities provided by the project.
+![blacklight_1](https://github.com/aryansingh3/blacklight_studios/assets/74758078/1d148315-39de-415c-abd4-2ae0fe49e91b)
+
+![blacklight_3](https://github.com/aryansingh3/blacklight_studios/assets/74758078/76d0ba12-46a7-4230-a01a-9dac2464d528)
+
+
+
