@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class WeeklyLeaderBoardDataService {
-  url = 'http://localhost:8080/currentWeekLeaderboard';
+  url = 'https://blacklight-studios.onrender.com/currentWeekLeaderboard';
   constructor(private http: HttpClient) {}
   getWeeklyLeaderBoardData() {
     return this.http.get(this.url);

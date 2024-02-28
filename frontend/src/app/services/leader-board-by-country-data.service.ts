@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LeaderBoardByCountryDataService {
-  url = 'http://localhost:8080/lastWeekLeaderboardByCountry';
+  url = 'https://blacklight-studios.onrender.com/lastWeekLeaderboardByCountry';
   
   constructor(private http: HttpClient) {}
 

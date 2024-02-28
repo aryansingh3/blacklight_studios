@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GetRankByUidService {
-  url = 'http://localhost:8080/userLeaderboardRank';
+  url = 'https://blacklight-studios.onrender.com/userLeaderboardRank';
   
   constructor(private http: HttpClient) {}
 

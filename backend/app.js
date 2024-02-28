@@ -13,11 +13,17 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:4200"],
+    origin: ["http://localhost:4200" , "https://blacklight-studios.netlify.app"],
   })
 );
 
 app.use(bodyParser.json());
+
+setInterval(async () => {
+  fetch("https://blacklight-studios.onrender.com/heartbeat")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}, 10 * 60 * 1000);
 
 const populate = async (req, res) => {
   populateDatabase(10000);
@@ -99,18 +105,28 @@ const handleUserLeaderboardRank = async (req, res) => {
         })
         .filter((user) => user !== undefined)
         .slice(0, 200);
-      return res.status(200).send({ success: true, data: resultsStartingWithUid });
+      return res
+        .status(200)
+        .send({ success: true, data: resultsStartingWithUid });
     })
     .catch((error) => {
       return res.status(200).send({ success: false, error });
     });
 };
 
+const checkHeartBeat = (req, res) => {
+  res.status(200).json({ succes: true });
+};
+
 //Routes
 app.get("/currentWeekLeaderboard", tryCatch(handleCurrentWeekLeaderboard));
-app.post("/lastWeekLeaderboardByCountry", tryCatch(handleLastWeekLeaderboardByCountry));
+app.post(
+  "/lastWeekLeaderboardByCountry",
+  tryCatch(handleLastWeekLeaderboardByCountry)
+);
 app.post("/userLeaderboardRank", tryCatch(handleUserLeaderboardRank));
 app.get("/populate", tryCatch(populate));
+app.get("/heartbeat", tryCatch(checkHeartBeat));
 
 // Error handler
 app.use(errorHandler);
