@@ -1,4 +1,11 @@
 **BlackLight Studios Assignment**
+**FRONTEND LINK**
+
+https://blacklight-studios.netlify.app
+
+**BACKEND LINK**
+
+https://blacklight-studios.onrender.com/
 
 **Overview:**
 This project aims to implement a leaderboard system with three main functionalities:
